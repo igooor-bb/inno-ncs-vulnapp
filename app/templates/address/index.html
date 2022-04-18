@@ -7,7 +7,7 @@
 {% if result %}
     <ul>
         {% for address in result %}
-            <li>{% autoescape off %}{{ address.address }}{% endautoescape %}</li>
+            <li>{% autoescape off %}{{ address }}{% endautoescape %}</li>
         {% endfor %}
     </ul>
 {% elif not_found %}
