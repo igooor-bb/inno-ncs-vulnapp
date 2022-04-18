@@ -1,0 +1,15 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+    <ul>
+        {% for address in result %}
+            <li>{% autoescape off %}{{ address.address }}{% endautoescape %}</li>
+        {% endfor %}
+    </ul>
+{% elif not_found %}
+    <p>Nothing found for your request</p>
+{% endif %}
